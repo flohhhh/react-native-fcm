@@ -5,9 +5,9 @@ import android.os.Bundle;
 import android.util.Log;
 
 import com.google.firebase.iid.FirebaseInstanceId;
-import com.google.firebase.iid.FirebaseInstanceIdService;
+import com.google.firebase.messaging.FirebaseMessagingService;
 
-public class InstanceIdService extends FirebaseInstanceIdService {
+public class InstanceIdService extends FirebaseMessagingService {
 
     private static final String TAG = "InstanceIdService";
 
@@ -18,7 +18,7 @@ public class InstanceIdService extends FirebaseInstanceIdService {
      */
     // [START refresh_token]
     @Override
-    public void onTokenRefresh() {
+    public void onNewToken(String token) {
         // Get updated InstanceID token.
         String refreshedToken = FirebaseInstanceId.getInstance().getToken();
         Log.d(TAG, "Refreshed token: " + refreshedToken);
