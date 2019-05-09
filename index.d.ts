@@ -160,13 +160,12 @@ declare module "react-native-fcm" {
     static getAPNSToken(): Promise<string>;
 
     static setNotificationCategories(categories: NotificationCategory[]): void;
-    @ts-ignore
     static createNotificationChannel(config: {
       id: string;
       name: string;
       description?: string;
       priority?: string;
-    });
+    }): any;
   }
 
   export default FCM;
